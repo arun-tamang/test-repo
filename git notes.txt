@@ -1,0 +1,18 @@
+arun@arun-PC MINGW64 /f/git (master)
+$ git branch
+* master
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git branch 'branch name'
+fatal: 'branch name' is not a valid branch name.
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git branch branch name
+fatal: Not a valid object name: 'name'.
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git branch
+* master
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git branch branch-name

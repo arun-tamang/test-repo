@@ -1,3 +1,5 @@
-asdfasdfsjkljlasdfasdf
+(deleted in branch: 'branch-name')
 
 changed in branch: 'branch-name'.
+
+master change.
