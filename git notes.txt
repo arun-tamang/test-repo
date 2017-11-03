@@ -16,3 +16,165 @@ $ git branch
 
 arun@arun-PC MINGW64 /f/git (master)
 $ git branch branch-name
+
+
+
+
+
+
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$ vi test1.txt
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$ git status
+On branch branch-name
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   test.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        git notes.txt
+        test2.txt
+
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$ git add .
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$ git commit -m 'commit from branch-name'
+[branch-name ce147d6] commit from branch-name
+ 4 files changed, 22 insertions(+), 2 deletions(-)
+ create mode 100644 git notes.txt
+ create mode 100644 test2.txt
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$ git status
+On branch branch-name
+nothing to commit, working tree clean
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$ git branch
+* branch-name
+  master
+
+arun@arun-PC MINGW64 /f/git (branch-name)
+$ git checkout master
+Switched to branch 'master'
+
+arun@arun-PC MINGW64 /f/git (master)
+$
+
+arun@arun-PC MINGW64 /f/git (master)
+$
+
+arun@arun-PC MINGW64 /f/git (master)
+$ vi test.
+test.log  test.txt
+
+arun@arun-PC MINGW64 /f/git (master)
+$ vi test.txt
+
+arun@arun-PC MINGW64 /f/git (master)
+$
+
+arun@arun-PC MINGW64 /f/git (master)
+$
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git merge branch-name
+error: Your local changes to the following files would be overwritten by merge:
+        test.txt
+Please commit your changes or stash them before you merge.
+Aborting
+Updating 4d7b432..ce147d6
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git add .
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git commit -m 'commit from master'
+[master cbe35e9] commit from master
+ 1 file changed, 1 insertion(+)
+
+arun@arun-PC MINGW64 /f/git (master)
+$
+
+arun@arun-PC MINGW64 /f/git (master)
+$
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git merge branch-name
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+arun@arun-PC MINGW64 /f/git (master|MERGING)
+$ notepad test.txt
+
+arun@arun-PC MINGW64 /f/git (master|MERGING)
+$ git merge branch-name
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+arun@arun-PC MINGW64 /f/git (master|MERGING)
+$ notepad test.txt
+
+arun@arun-PC MINGW64 /f/git (master|MERGING)
+$ git merge branch-name
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+arun@arun-PC MINGW64 /f/git (master|MERGING)
+$ git add test.txt
+
+arun@arun-PC MINGW64 /f/git (master|MERGING)
+$ git commit -m test.txt
+[master 3c7a6a4] test.txt
+
+arun@arun-PC MINGW64 /f/git (master)
+$ git merge branch-name
+Already up to date.
+
